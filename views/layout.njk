@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    {% block head %}
+        <title>Pedro Felipe Baltar</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="/">Sobre</a>
+            <a href="/portfolio">Vídeos</a>
+        </div>
+    </header>
+
+    {% block content %}<!-- Criando um bloco chamado content pelo nunjucks-->
+    <!-- O código que está no block virá para cá -->
+    {% endblock %} <!-- Fechando o bloco -->
+</body>
+</html>
