@@ -4,6 +4,7 @@ const routes = require('./routes')
 
 const server = express()
 
+server.use(express.urlencoded({ extended: true }))
 server.use(express.static('public'))
 server.use(routes)
 
@@ -17,3 +18,4 @@ nunjucks.configure('views', {
 server.listen(5500, () => {
     console.log('server is running 🚀')
 })
+// npm install browser-sync npm-run-all -D -> browser-sync = atualiza a página igual o live server
