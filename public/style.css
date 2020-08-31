@@ -92,6 +92,7 @@ header {
 
 .details {
   padding: 32px;
+  display: grid;
 }
 
 .details h3 {
@@ -175,16 +176,26 @@ a.button {
   background: var(--primary-color);
   color: var(--secondary-color);
   font-size: 18px;
+  display: inline-block;
+  box-sizing: border-box;
   font-weight: bold;
   cursor: pointer;
   transition: 200ms;
-  display: block;
-  box-sizing: border-box;
   text-align: center;
   text-decoration: none;
 }
 
 button[type="submit"]:hover,
-a.button:hover:hover {
-  background-color: var(--primary-hover)
-};
+a.button:hover {
+  background-color: var(--primary-hover);
+}
+
+#form-delete button[type="submit"],
+a.button {
+  background: #f5254e;
+}
+
+#form-delete button[type="submit"]:hover,
+a.buttons:hover {
+  background: #fd1140;
+}

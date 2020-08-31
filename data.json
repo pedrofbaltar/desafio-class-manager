@@ -2,43 +2,13 @@
   "teachers": [
     {
       "id": 1,
-      "created_at": 1597408124651,
-      "avatar_url": "http://pedrobaltar.com",
-      "name": "Pedro Felipe Baltar",
-      "education_level": "graduate",
-      "classes": "distance",
-      "services": "code, ux experience",
-      "birth": 1038441600000
-    },
-    {
-      "id": 2,
-      "created_at": 1597408282890,
+      "created_at": 1598899518572,
       "avatar_url": "http://pedrobaltar.com",
       "name": "pedro",
-      "education_level": "doctorate",
-      "classes": "distance",
-      "services": "teste",
-      "birth": 1071187200000
-    },
-    {
-      "id": 3,
-      "created_at": 1597627992980,
-      "avatar_url": "http://pedrobaltar.com",
-      "name": "pedro felipe baltar",
-      "education_level": "doctorate",
+      "education_level": "high_school",
       "classes": "distance",
       "services": "code, ux experience",
       "birth": 1038441600000
-    },
-    {
-      "id": 4,
-      "created_at": 1597628149905,
-      "avatar_url": "http://pedrobaltar.com",
-      "name": "pedro 1",
-      "education_level": "master",
-      "classes": "distance",
-      "services": "Body building, musculação",
-      "birth": 1012608000000
     }
   ]
 }
