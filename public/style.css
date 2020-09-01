@@ -190,12 +190,66 @@ a.button:hover {
   background-color: var(--primary-hover);
 }
 
-#form-delete button[type="submit"],
-a.button {
+#form-delete .delete-button {
+  background: #fd1140;
+}
+
+#form-delete .delete-button:hover {
   background: #f5254e;
 }
 
-#form-delete button[type="submit"]:hover,
-a.buttons:hover {
-  background: #fd1140;
+/* index table */
+
+.table-container {
+  display: block;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+}
+
+.table-container table {
+  border-spacing: 0;
+}
+
+tbody tr td:first-child {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+
+tbody tr td:first-child span {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+thead tr th {
+  color: var(--yellow-color);
+}
+
+td,
+th {
+  border-bottom: 1px solid var(--gray-color);
+  padding: 24px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td a {
+  background: var(--primary-color);
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 150ms ease-in;
+}
+
+td a:hover {
+  background: var(--primary-hover);
 }

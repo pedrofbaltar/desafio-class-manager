@@ -36,7 +36,7 @@ module.exports = {
     } if(educationLevel == 'doctorate') {
       education = 'Doutorado'
     }
-
+    
     return education
   }
 }

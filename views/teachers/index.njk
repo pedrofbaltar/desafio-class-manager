@@ -1,36 +1,30 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <div class="card">
-        <section class="image"></section>
-        <section class="details">
-            <h3>Detalhes</h3>
-
-            <div class="item">
-                <div>Professor</div>
-                <div>Pedro Felipe Baltar</div>
-            </div>
-            <div class="item">
-                <div>Grau de escolaridade</div>
-                <div>Ensino superior</div>
-            </div>
-            <div class="item">
-                <div>Tipo de aula</div>
-                <div>Distância</div>
-            </div>
-
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    <span>Programação</span>
-                    <span>Design de interface</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Desde</div>
-                <div>01/01/2020</div>
-            </div>
-        </section>
-    </div>
+  <div class="card table-container">
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Nome completo</th>
+          <th>Atendimento</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for teacher in teachers %}
+          <tr>
+            <td>
+              <span style="background-image: url({{ teacher.avatar_url }})"></span>
+              {{ teacher.name }}
+            </td>
+            <td>
+              <span>{{ teacher.services }}</span>
+            </td>
+            <td><a href="/teachers/{{ teacher.id }}">ver</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  </div>
 {% endblock %}
