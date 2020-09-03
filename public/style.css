@@ -172,7 +172,7 @@ button[type="submit"],
 a.button {
   padding: 12px 24px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 15px;
   background: var(--primary-color);
   color: var(--secondary-color);
   font-size: 18px;
@@ -240,7 +240,8 @@ tr:last-child td {
   border-bottom: none;
 }
 
-td a {
+td a,
+.table-container a {
   background: var(--primary-color);
   border-radius: 8px;
   color: #fff;
@@ -250,6 +251,11 @@ td a {
   transition: background 150ms ease-in;
 }
 
-td a:hover {
+td a:hover,
+.table-container a:hover {
   background: var(--primary-hover);
+}
+
+.table-container a {
+  display: inline-block;
 }
