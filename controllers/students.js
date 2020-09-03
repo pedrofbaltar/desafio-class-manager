@@ -44,9 +44,9 @@ exports.post = (req, res) => {
     if(err) {
       return res.send('Ocorreu um erro, tente novamente!')
     }
-  })
 
-  return res.redirect('students')
+    return res.redirect('/students')
+  })
 }
 
 exports.create = (req, res) => {
@@ -56,26 +56,26 @@ exports.create = (req, res) => {
 exports.show = (req, res) => {
   const { id } = req.params
 
-  const foundstudent = data.students.find((student) => {
+  const foundStudent = data.students.find((student) => {
     return student.id == id
   })
 
-  if(!foundstudent) {
-    return ('student not found!')
+  if(!foundStudent) {
+    return ('Student not found!')
   }
 
   const student = {
-    ...foundstudent,
+    ...foundStudent,
 
-    services: foundstudent.services.split(','),
+    services: foundStudent.services.split(','),
 
-    // birth: new Intl.DateTimeFormat('pt-BR').format(foundstudent.birth), birthday date
+    // birth: new Intl.DateTimeFormat('pt-BR').format(foundStudent.birth), birthday date
 
-    age: age(foundstudent.birth),
+    age: age(foundStudent.birth),
 
-    graduation: graduation(foundstudent.education_level),
+    graduation: graduation(foundStudent.education_level),
     
-    created_at: new Intl.DateTimeFormat('pt-BR').format(foundstudent.created_at)
+    created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudent.created_at)
   }
 
   return res.render('students/show', { student })
@@ -84,17 +84,17 @@ exports.show = (req, res) => {
 exports.edit = (req, res) => {
   const { id } = req.params
 
-  const foundstudent = data.students.find((student) => {
+  const foundStudent = data.students.find((student) => {
     return student.id == id
   })
 
-  if(!foundstudent) {
-    return ('student not found!')
+  if(!foundStudent) {
+    return ('Student not found!')
   }
 
   const student = {
-    ...foundstudent,
-    birth: date(foundstudent.birth)
+    ...foundStudent,
+    birth: date(foundStudent.birth)
     
   }
 
@@ -105,7 +105,7 @@ exports.update = (req, res) => {
   const { id } = req.body
   let index = 0
 
-  const foundstudent = data.students.find((student, foundIndex) => {
+  const foundStudent = data.students.find((student, foundIndex) => {
     if(id == student.id) {
       index = foundIndex
 
@@ -113,12 +113,12 @@ exports.update = (req, res) => {
     }
   })
 
-  if(!foundstudent) {
-    return res.send('student not found!')
+  if(!foundStudent) {
+    return res.send('Student not found!')
   }
 
   const student = {
-    ...foundstudent,
+    ...foundStudent,
     ...req.body,
     birth: Date.parse(req.body.birth),
     id: Number.parseInt(req.body.id)
@@ -138,11 +138,11 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const { id } = req.body
 
-  const filteredstudents = data.students.filter(student => {
+  const filteredStudents = data.students.filter(student => {
     return student.id != id
   })
 
-  data.students = filteredstudents
+  data.students = filteredStudents
 
   fs.writeFile('data.json', JSON.stringify(data, null, 2), err => {
     if(err) {

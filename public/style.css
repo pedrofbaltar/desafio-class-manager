@@ -202,7 +202,7 @@ a.button:hover {
 
 .table-container {
   display: block;
-  padding: 40px;
+  padding: 40px 40px;
   box-sizing: border-box;
   text-align: center;
   font-weight: bold;
@@ -256,6 +256,7 @@ td a:hover,
   background: var(--primary-hover);
 }
 
-.table-container a {
+.table-container a.new-button {
   display: inline-block;
+  margin-top: 16px;
 }

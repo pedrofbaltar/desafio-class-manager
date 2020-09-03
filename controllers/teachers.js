@@ -44,9 +44,9 @@ exports.post = (req, res) => {
     if(err) {
       return res.send('Ocorreu um erro, tente novamente!')
     }
-  })
 
-  return res.redirect('teachers')
+    return res.redirect('/teachers')
+  })
 }
 
 exports.create = (req, res) => {
