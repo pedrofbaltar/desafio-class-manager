@@ -1,14 +1,6 @@
 {
   "students": [
-    {
-      "id": 1,
-      "avatar_url": "http://pedrobaltar.com",
-      "name": "Pedro Felipe Baltar",
-      "email": "pfbaltariead@gmail.com",
-      "education_level": "2hight-school",
-      "hours": "12",
-      "birth": 255040369200000
-    },
+    {},
     {
       "avatar_url": "http://pedrobaltar.com",
       "name": "MAYK R BRITO",

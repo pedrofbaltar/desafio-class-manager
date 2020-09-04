@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date, classType, graduation } = require('../until')
+const { age, date, graduation, classType } = require('../until')
 
 exports.index = (req, res) => {
   return res.render('teachers/index', { teachers: data.teachers })
@@ -96,7 +96,7 @@ exports.edit = (req, res) => {
 
   const teacher = {
     ...foundTeacher,
-    birth: date(foundTeacher.birth)
+    birth: date(foundTeacher.birth).iso
     
   }
 

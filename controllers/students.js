@@ -60,7 +60,9 @@ exports.show = (req, res) => {
     // birth: new Intl.DateTimeFormat('pt-BR').format(foundStudent.birth), birthday date
     schoolGrade: schoolGrade(foundStudent.education_level),
 
-    age: age(foundStudent.birth)
+    age: age(foundStudent.birth),
+    
+    birthDay: date(foundStudent.birth).birthDay
   }
 
   return res.render('students/show', { student })
@@ -79,7 +81,7 @@ exports.edit = (req, res) => {
 
   const student = {
     ...foundStudent,
-    birth: date(foundStudent.birth)    
+    birth: date(foundStudent.birth).iso   
   }
 
   return res.render('students/edit', { student })
