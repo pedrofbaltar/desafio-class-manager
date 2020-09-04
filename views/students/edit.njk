@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="card">
-    <section class="image"></section>
+    <section class="image" style="background: url({{ student.avatar_url }}) no-repeat  center center/ cover"></section>
     <section class="details">
       <form action="/students?_method=PUT" method="POST" id="form">
         <h3>Editar aluno</h3>
