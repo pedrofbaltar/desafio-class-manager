@@ -24,6 +24,17 @@ module.exports = {
 
     return(`${year}-${month}-${day}`)
   },
+  classType: typeClass => {
+    let classe = ""
+
+    if(typeClass == 'distance') {
+      classe = 'Distância'
+    } if(typeClass == 'present') {
+      classe = 'Presencial'
+    }
+
+    return classe
+  },
   graduation: educationLevel => {
     let education = ""
 
@@ -39,7 +50,6 @@ module.exports = {
     
     return education
   },
-  
   schoolGrade: educationLevel => {
     let education = ""
 

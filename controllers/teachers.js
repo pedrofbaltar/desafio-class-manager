@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date, graduation } = require('../until')
+const { age, date, classType, graduation } = require('../until')
 
 exports.index = (req, res) => {
   return res.render('teachers/index', { teachers: data.teachers })
@@ -72,6 +72,8 @@ exports.show = (req, res) => {
     // birth: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.birth), birthday date
 
     age: age(foundTeacher.birth),
+
+    classType: classType(foundTeacher.classes),
 
     graduation: graduation(foundTeacher.education_level),
     
