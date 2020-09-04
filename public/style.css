@@ -207,19 +207,20 @@ a.button:hover {
 
 .table-container {
   display: block;
-  padding: 40px 40px;
+  padding: 40px;
   box-sizing: border-box;
-  text-align: center;
   font-weight: bold;
+  position: relative;
 }
 
 .table-container table {
   border-spacing: 0;
+  text-align: center;
 }
 
 tbody tr td:first-child {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 32px 1fr;
   align-items: center;
 }
 
@@ -262,6 +263,9 @@ td a:hover,
 }
 
 .table-container a.new-button {
+  width: 100%;
   display: inline-block;
-  margin-top: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 32px;
 }
