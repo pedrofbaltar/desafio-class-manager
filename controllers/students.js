@@ -15,27 +15,20 @@ exports.post = (req, res) => {
       return res.send('Por favor, preencha todos os campos!')
     }
   }
-  
-  let {
-    avatar_url,
-    name,
-    email,
-    education_level,
-    birth,
-    hours
-  } = req.body
 
-  birth = Date.parse(birth)
-  id = Number(data.students.length + 1)
+  birth = Date.parse(req.body.birth)
+
+  let id = 1
+  const lastStudent = data.students[data.students.length - 1]
+
+  if(lastStudent) {
+    id = lastStudent.id + 1
+  }
 
   data.students.push({
+    ...req.body,
     id,
-    avatar_url,
-    name,
-    email,
-    education_level,
-    birth,
-    hours
+    birth
   })
 
   fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
