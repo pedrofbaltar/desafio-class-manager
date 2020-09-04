@@ -17,22 +17,21 @@
       </div>
 
       <div class="item">
+        <div>Ano escolar</div>
+        <div>{{ student.schoolGrade }}</div>
+      </div>
+
+      <div class="item">
+        <div>Carga horária semanal</div>
+        <div>{{ student.hours }} horas</div>
+      </div>
+
+      <div class="item">
         <div>Idade</div>
         <div>
             {{ student.age }} anos
         </div>
       </div>
-
-      <div class="item">
-        <div>Tipo de aula</div>
-        <div>{{ student.schoolGrade }}</div>
-      </div>
-
-      <div class="item">
-        <div>Tipo de aula</div>
-        <div>{{ student.hours }} horas</div>
-      </div>
-
       <a href="/students/{{student.id}}/edit" class="button">Editar</a>
     </section>
   </div>
