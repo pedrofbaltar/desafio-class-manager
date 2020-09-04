@@ -72,33 +72,38 @@
 <div class="item">
   <div>Tipo de aula</div>
   <div>
+    <span>
       <input 
         type="radio" 
         name="classes" 
-        value="distance"
-        {% if teacher.classes == 'distance'%}
+        value="Distância"
+        {% if teacher.classes == "Distância" %}
           checked
         {% endif %}
       >Distância
+    </span>
+    <span>
       <input 
         type="radio" 
         name="classes" 
-        value="presencial"
-        {% if teacher.classes == 'presencial'%}
+        value="Presencial"
+        {% if teacher.classes == "Presencial" %}
           checked
         {% endif %}
       >Presencial
+    </span>
   </div>
 </div>
 
 <div class="item">
   <div>Área de atuação</div>
   <div>
-      <input 
-        type="text" 
-        name="services" 
-        placeholder="Separe os serviços prestados por vírgula" 
-        value="{{ teacher.services }}">
+    <input 
+      type="text" 
+      name="services" 
+      placeholder="Separe os serviços prestados por vírgula" 
+      value="{{ teacher.services }}"
+    >
   </div>
 </div>
 <button type="submit">Salvar</button>
