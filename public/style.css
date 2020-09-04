@@ -60,6 +60,11 @@ header {
   transition: width 200ms ease-in-out;
 }
 
+.menu a.active::after {
+  width: 100%;
+  transition: width 200ms ease-in-out;
+}
+
 /* CARD */
 
 .card {
