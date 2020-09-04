@@ -1,5 +1,15 @@
 {
-  "students": [],
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "http://pedrobaltar.com",
+      "name": "Pedro Felipe Baltar",
+      "email": "pfbaltariead@gmail.com",
+      "education_level": "9fund",
+      "birth": 1038441600000,
+      "hours": "1321656"
+    }
+  ],
   "teachers": [
     {
       "id": 1,

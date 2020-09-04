@@ -12,8 +12,8 @@
       </div>
 
       <div class="item">
-        <div>Grau de escolaridade</div>
-        <div>{{ student.graduation }}</div>
+        <div>Email</div>
+        <div>{{ student.email }}</div>
       </div>
 
       <div class="item">
@@ -25,21 +25,12 @@
 
       <div class="item">
         <div>Tipo de aula</div>
-        <div>{{ student.classes }}</div>
+        <div>{{ student.schoolGrade }}</div>
       </div>
 
       <div class="item">
-        <div>Acompanhamento</div>
-        <div>
-            {% for service in student.services %}
-                <span>{{ service }}</span>
-            {% endfor %}
-        </div>
-      </div>
-
-      <div class="item">
-        <div>Desde</div>
-        <div>{{ student.created_at }}</div>
+        <div>Tipo de aula</div>
+        <div>{{ student.hours }} horas</div>
       </div>
 
       <a href="/students/{{student.id}}/edit" class="button">Editar</a>

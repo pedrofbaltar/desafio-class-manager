@@ -74,7 +74,7 @@ exports.show = (req, res) => {
     age: age(foundTeacher.birth),
 
     graduation: graduation(foundTeacher.education_level),
-        
+    
     created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.created_at)
   }
 

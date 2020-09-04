@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, graduation, date } = require('../until')
+const { age, date, schoolGrade } = require('../until')
 
 exports.index = (req, res) => {
   return res.render('students/index', { students: data.students })
@@ -19,25 +19,23 @@ exports.post = (req, res) => {
   let {
     avatar_url,
     name,
+    email,
     education_level,
-    classes,
-    services,
-    birth
+    birth,
+    hours
   } = req.body
 
   birth = Date.parse(birth)
-  created_at = Date.now()
   id = Number(data.students.length + 1)
 
   data.students.push({
     id,
-    created_at,
     avatar_url,
     name,
+    email,
     education_level,
-    classes,
-    services,
-    birth
+    birth,
+    hours
   })
 
   fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
@@ -66,16 +64,10 @@ exports.show = (req, res) => {
 
   const student = {
     ...foundStudent,
-
-    services: foundStudent.services.split(','),
-
     // birth: new Intl.DateTimeFormat('pt-BR').format(foundStudent.birth), birthday date
+    schoolGrade: schoolGrade(foundStudent.education_level),
 
-    age: age(foundStudent.birth),
-
-    graduation: graduation(foundStudent.education_level),
-    
-    created_at: new Intl.DateTimeFormat('pt-BR').format(foundStudent.created_at)
+    age: age(foundStudent.birth)
   }
 
   return res.render('students/show', { student })
@@ -94,8 +86,7 @@ exports.edit = (req, res) => {
 
   const student = {
     ...foundStudent,
-    birth: date(foundStudent.birth)
-    
+    birth: date(foundStudent.birth)    
   }
 
   return res.render('students/edit', { student })

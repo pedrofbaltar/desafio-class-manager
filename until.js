@@ -38,5 +38,29 @@ module.exports = {
     }
     
     return education
+  },
+  
+  schoolGrade: educationLevel => {
+    let education = ""
+
+    if(educationLevel == '5fund') {
+      education = '5º ano - Fundamental I'
+    } if(educationLevel == '6fund') {
+      education = '6º ano - Fundamental II'
+    } if(educationLevel == '7fund') {
+      education = '7º ano - Fundamental II'
+    } if(educationLevel == '8fund') {
+      education = '8º ano - Fundamental II'
+    } if(educationLevel == '9fund') {
+      education = '9º ano - Fundamental II'
+    } if(educationLevel == '1hight-school') {
+      education = '1º ano - Ensino médio'
+    } if(educationLevel == '2hight-school') {
+      education = '2º ano - Ensino médio'
+    } if(educationLevel == '3hight-school') {
+      education = '3º ano - Ensino médio'
+    }
+
+    return education
   }
 }
