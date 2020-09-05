@@ -11,16 +11,5 @@
       "grade": "5º ano - Fundamental I"
     }
   ],
-  "teachers": [
-    {
-      "id": 1,
-      "created_at": 1599266331958,
-      "avatar_url": "https://avatars1.githubusercontent.com/u/61912191?s=460&u=db4c518f607f496c8d69868d8454065fa518ef12&v=4",
-      "name": "Pedro Felipe Baltar",
-      "education_level": "high_school",
-      "classes": "distance",
-      "services": "HTML, CSS, JavaScript",
-      "birth": 1038441600000
-    }
-  ]
+  "teachers": []
 }
