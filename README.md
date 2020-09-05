@@ -30,8 +30,10 @@
  
 ## 🚀 To use this respository
  **1. Clone this repository**
-  
- `$ git clone https://github.com/pedrofbaltar/desafio-class-manager`
+
+ ```
+ $ git clone https://github.com/pedrofbaltar/desafio-class-manager
+ ```
 
  **2. Install and run the application on your terminal**
  ```
