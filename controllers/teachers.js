@@ -6,6 +6,10 @@ exports.index = (req, res) => {
   return res.render('teachers/index', { teachers: data.teachers })
 }
 
+exports.create = (req, res) => {
+  return res.render('teachers/create')
+}
+
 exports.post = (req, res) => {
   const keys = Object.keys(req.body)
 
@@ -49,13 +53,8 @@ exports.post = (req, res) => {
   })
 }
 
-exports.create = (req, res) => {
-  return res.render('teachers/create')
-}
-
 exports.show = (req, res) => {
   const { id } = req.params
-
   const foundTeacher = data.teachers.find((teacher) => {
     return teacher.id == id
   })
@@ -66,17 +65,10 @@ exports.show = (req, res) => {
 
   const teacher = {
     ...foundTeacher,
-
     services: foundTeacher.services.split(','),
-
-    // birth: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.birth), birthday date
-
     age: age(foundTeacher.birth),
-
     classType: classType(foundTeacher.classes),
-
-    graduation: graduation(foundTeacher.education_level),
-    
+    graduation: graduation(foundTeacher.education_level),    
     created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.created_at)
   }
 
@@ -85,7 +77,6 @@ exports.show = (req, res) => {
 
 exports.edit = (req, res) => {
   const { id } = req.params
-
   const foundTeacher = data.teachers.find((teacher) => {
     return teacher.id == id
   })
@@ -96,8 +87,7 @@ exports.edit = (req, res) => {
 
   const teacher = {
     ...foundTeacher,
-    birth: date(foundTeacher.birth).iso
-    
+    birth: date(foundTeacher.birth).iso    
   }
 
   return res.render('teachers/edit', { teacher })
@@ -139,7 +129,6 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
   const { id } = req.body
-
   const filteredTeachers = data.teachers.filter(teacher => {
     return teacher.id != id
   })

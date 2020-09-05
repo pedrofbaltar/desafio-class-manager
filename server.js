@@ -20,4 +20,3 @@ nunjucks.configure('views', {
 server.listen(5500, () => {
     console.log('server is running 🚀')
 })
-// npm install browser-sync npm-run-all -D -> browser-sync = atualiza a página igual o live server

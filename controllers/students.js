@@ -12,6 +12,10 @@ exports.index = (req, res) => {
   return res.render('students/index', { students: data.students })
 }
 
+exports.create = (req, res) => {
+  return res.render('students/create')
+}
+
 exports.post = (req, res) => {
   const keys = Object.keys(req.body)
 
@@ -46,13 +50,8 @@ exports.post = (req, res) => {
   })
 }
 
-exports.create = (req, res) => {
-  return res.render('students/create')
-}
-
 exports.show = (req, res) => {
   const { id } = req.params
-
   const foundStudent = data.students.find((student) => {
     return student.id == id
   })
@@ -63,11 +62,8 @@ exports.show = (req, res) => {
 
   const student = {
     ...foundStudent,
-    // birth: new Intl.DateTimeFormat('pt-BR').format(foundStudent.birth), birthday date
     grade: grade(foundStudent.education_level),
-
-    age: age(foundStudent.birth),
-    
+    age: age(foundStudent.birth),  
     birthDay: date(foundStudent.birth).birthDay
   }
 
@@ -76,7 +72,6 @@ exports.show = (req, res) => {
 
 exports.edit = (req, res) => {
   const { id } = req.params
-
   const foundStudent = data.students.find((student) => {
     return student.id == id
   })
@@ -129,7 +124,6 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
   const { id } = req.body
-
   const filteredStudents = data.students.filter(student => {
     return student.id != id
   })

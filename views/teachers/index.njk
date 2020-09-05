@@ -20,12 +20,13 @@
             <td>
               <span>{{ teacher.services }}</span>
             </td>
-            <td><a href="/teachers/{{ teacher.id }}">ver</a></td>
+            <td>
+              <a href="/teachers/{{ teacher.id }}">ver</a>
+            </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
     <a class="new-button" href="/teachers/create">Novo</a>
   </div>
-
 {% endblock %}

@@ -7,6 +7,7 @@ routes.get('/', (req, res) => {
     return res.redirect('/teachers')
 })
 
+// teachers routes
 routes.get('/teachers', teachers.index)
 routes.get('/teachers/create', teachers.create)
 routes.get('/teachers/:id', teachers.show)
@@ -15,6 +16,7 @@ routes.post('/teachers', teachers.post)
 routes.put('/teachers', teachers.update)
 routes.delete('/teachers', teachers.delete)
 
+// students routes
 routes.get('/students', students.index)
 routes.get('/students/create', students.create)
 routes.get('/students/:id', students.show)

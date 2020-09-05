@@ -1,8 +1,8 @@
-const currentPage = location.pathname
+const localPage = location.pathname
 const menuItems = document.querySelectorAll('header .menu a')
 
 for(item of menuItems) {
-  if(currentPage.includes(item.getAttribute('href'))) {
+  if(localPage.includes(item.getAttribute('href'))) {
     item.classList.add('active')
   }
 }

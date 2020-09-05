@@ -32,7 +32,6 @@ header {
   font-size: 22px;
 }
 
-
 .menu a + a {
   margin-left: 32px;
 }
@@ -138,7 +137,6 @@ header {
   font-weight: bold;
   color: var(--secondary-color);
 }
-
 
 .item span:nth-child(2) {
   margin-left: 10px;

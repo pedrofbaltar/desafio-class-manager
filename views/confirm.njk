@@ -4,8 +4,6 @@
   formDelete.addEventListener('submit', event => {
     const confirmation = confirm('Deseja mesmo deletar?')
 
-    if(!confirmation) {
-      event.preventDefault()
-    }
+    if(!confirmation) event.preventDefault()
   })
 </script>

@@ -9,13 +9,11 @@
         {% include "students/fields.njk"%}
         <input type="hidden" name="id" value="{{ student.id }}">
       </form>
-
       <form action="/students?_method=DELETE" id="form-delete" method="POST">
         <input type="hidden" name="id" value="{{ student.id }}">
         <button class="delete-button" type="submit">Deletar</button>
       </form>
     </section>
   </div>
-
   {% include "confirm.njk"%}
 {% endblock %}

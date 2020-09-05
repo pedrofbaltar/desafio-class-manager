@@ -1,4 +1,3 @@
-
 module.exports = {
   age: timestamp => {
     const today = new Date()
@@ -40,26 +39,13 @@ module.exports = {
     return education
   },
   grade: educationLevel => {
-    let education = ""
-
-    if(educationLevel == '5EF') {
-      education = '5º ano - Fundamental I'
-    } if(educationLevel == '6EF') {
-      education = '6º ano - Fundamental II'
-    } if(educationLevel == '7EF') {
-      education = '7º ano - Fundamental II'
-    } if(educationLevel == '8EF') {
-      education = '8º ano - Fundamental II'
-    } if(educationLevel == '9EF') {
-      education = '9º ano - Fundamental II'
-    } if(educationLevel == '1EM') {
-      education = '1º ano - Ensino médio'
-    } if(educationLevel == '2EM') {
-      education = '2º ano - Ensino médio'
-    } if(educationLevel == '3EM') {
-      education = '3º ano - Ensino médio'
-    }
-
-    return education
+    if(educationLevel == '5EF') return '5º ano - Fundamental I'
+    if(educationLevel == '6EF') return '6º ano - Fundamental II'
+     if(educationLevel == '7EF') return '7º ano - Fundamental II'
+     if(educationLevel == '8EF') return '8º ano - Fundamental II'
+     if(educationLevel == '9EF') return '9º ano - Fundamental II'
+     if(educationLevel == '1EM') return '1º ano - Ensino médio'
+     if(educationLevel == '2EM') return '2º ano - Ensino médio'
+     if(educationLevel == '3EM') return '3º ano - Ensino médio'
   }
 }
