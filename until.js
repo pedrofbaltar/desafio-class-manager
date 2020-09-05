@@ -7,7 +7,7 @@ module.exports = {
     let age = (today.getFullYear() - birthDate.getFullYear())
     const month = (today.getMonth() - birthDate.getMonth())
     
-    if (month < 0 || month == 0 && today.getDate() <= birthDate()) {
+    if (month < 0 || month == 0 && today.getDate() < birthDate.getDate()) {
       age = age - 1
     }
 
@@ -28,49 +28,35 @@ module.exports = {
     }
   },
   classType: typeClass => {
-    let classe = ""
-
-    if(typeClass == 'distance') {
-      classe = 'Distância'
-    } if(typeClass == 'present') {
-      classe = 'Presencial'
-    }
-
-    return classe
+    if(typeClass == 'distance') return 'Distância'
+    if(typeClass == 'present') return 'Presencial'
   },
   graduation: educationLevel => {
-    let education = ""
-
-    if(educationLevel == 'high_school') {
-      education = 'Ensino Médio'
-    } if(educationLevel == 'graduate') {
-      education = 'Ensino Superior'
-    } if(educationLevel == 'master') {
-      education = 'Mestrado'
-    } if(educationLevel == 'doctorate') {
-      education = 'Doutorado'
-    }
+    if(educationLevel == 'high_school') return 'Ensino Médio'
+    if(educationLevel == 'graduate') return 'Ensio Superior'
+    if(educationLevel == 'master') return 'Mestrado'
+    if(educationLevel == 'doctorate') return 'Doutorado'
     
     return education
   },
-  schoolGrade: educationLevel => {
+  grade: educationLevel => {
     let education = ""
 
-    if(educationLevel == '5fund') {
+    if(educationLevel == '5EF') {
       education = '5º ano - Fundamental I'
-    } if(educationLevel == '6fund') {
+    } if(educationLevel == '6EF') {
       education = '6º ano - Fundamental II'
-    } if(educationLevel == '7fund') {
+    } if(educationLevel == '7EF') {
       education = '7º ano - Fundamental II'
-    } if(educationLevel == '8fund') {
+    } if(educationLevel == '8EF') {
       education = '8º ano - Fundamental II'
-    } if(educationLevel == '9fund') {
+    } if(educationLevel == '9EF') {
       education = '9º ano - Fundamental II'
-    } if(educationLevel == '1hight-school') {
+    } if(educationLevel == '1EM') {
       education = '1º ano - Ensino médio'
-    } if(educationLevel == '2hight-school') {
+    } if(educationLevel == '2EM') {
       education = '2º ano - Ensino médio'
-    } if(educationLevel == '3hight-school') {
+    } if(educationLevel == '3EM') {
       education = '3º ano - Ensino médio'
     }
 

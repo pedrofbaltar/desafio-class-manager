@@ -1,8 +1,14 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date, schoolGrade } = require('../until')
+const { age, date, grade } = require('../until')
 
 exports.index = (req, res) => {
+  const students = data.students
+
+  for(let student of students) {
+    student.grade = grade(student.education_level)
+  }
+
   return res.render('students/index', { students: data.students })
 }
 
@@ -26,8 +32,8 @@ exports.post = (req, res) => {
   }
 
   data.students.push({
-    ...req.body,
     id,
+    ...req.body,
     birth
   })
 
@@ -58,7 +64,7 @@ exports.show = (req, res) => {
   const student = {
     ...foundStudent,
     // birth: new Intl.DateTimeFormat('pt-BR').format(foundStudent.birth), birthday date
-    schoolGrade: schoolGrade(foundStudent.education_level),
+    grade: grade(foundStudent.education_level),
 
     age: age(foundStudent.birth),
     

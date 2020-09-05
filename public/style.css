@@ -220,7 +220,7 @@ a.button:hover {
 
 tbody tr td:first-child {
   display: grid;
-  grid-template-columns: 32px 1fr;
+  grid-template-columns: 64px 1fr;
   align-items: center;
 }
 

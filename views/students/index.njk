@@ -6,7 +6,8 @@
       <thead>
         <tr>
           <th>Nome completo</th>
-          <th>Atendimento</th>
+          <th>Email</th>
+          <th>Ano escolar</th>
           <th>Ação</th>
         </tr>
       </thead>
@@ -18,7 +19,10 @@
               {{ student.name }}
             </td>
             <td>
-              <span>{{ student.services }}</span>
+              <span>{{ student.email }}</span>
+            </td>
+            <td>
+              <span>{{ student.grade}}</span>
             </td>
             <td><a href="/students/{{ student.id }}">ver</a></td>
           </tr>
