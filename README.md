@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-    Aulas do Módulo 4 - Class Manager
+    Aulas do Módulo 4 e 5 - Class Manager
 </h3>
 
 <hr>
@@ -16,6 +16,7 @@
  - [x] Desafio 4-5: HTTP: PUT e DELETE
  - [x] Desafio 4-6: Listagem de professores
  - [x] Desafio 4-7: Estruturando estudantes
+ - [x] Desafio 5-1: Refatorando aplicação e configurando o BD
  
 
 ## 💻 Technologies used
@@ -27,6 +28,8 @@
  - Express
  - Nunjucks
  - BrowserSync
+ - SQL
+ - Posgres
  
 ## 🚀 To use this respository
  **1. Clone this repository**
