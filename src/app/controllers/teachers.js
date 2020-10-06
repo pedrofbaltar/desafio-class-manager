@@ -1,8 +1,11 @@
 const { age, date, grade } = require('../../lib/utils')
+const Teacher = require('../models/Teacher')
 
 module.exports = {
   index(req, res) {
-    return res.render('teachers/index')
+    Teacher.all(teachers => {
+      return res.render('teachers/index', { teachers })
+    })
   },
   create(req, res) {
     return res.render('teachers/create')
