@@ -66,7 +66,7 @@ module.exports = {
         birth_date=($3),
         education_level=($4),
         class_type=($5),
-        subjects_taught=($6),
+        subjects_taught=($6)
       WHERE id = $7
     `
 
@@ -77,6 +77,7 @@ module.exports = {
       graduation(data.education_level),
       data.classes,
       data.services,
+      data.id
     ]
 
     db.query(query, values, (err, results) => {

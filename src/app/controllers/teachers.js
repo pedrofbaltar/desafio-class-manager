@@ -60,7 +60,9 @@ module.exports = {
       }
     }
 
-    return
+    Teacher.update(req.body, () => {
+      return res.redirect(`/teachers/${req.body.id}`)
+    })
   },
   delete(req, res) {
     return
