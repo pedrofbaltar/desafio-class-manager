@@ -1,4 +1,4 @@
-const { age, date, grade, graduation } = require('../../lib/utils')
+const { date, graduation } = require('../../lib/utils')
 const db = require('../../../config/db')
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     FROM teachers
     ORDER BY name ASC`, (err, results) => {
       if(err) {
-        throw `Data base ${err}`
+        throw `Database ${err}`
       }
 
       callback(results.rows)
@@ -40,7 +40,7 @@ module.exports = {
 
     db.query(query, values, (err, results) => {
       if(err) {
-        throw `Data base ${err}`
+        throw `Database ${err}`
       }
 
       callback(results.rows[0])
@@ -51,10 +51,11 @@ module.exports = {
       SELECT *
       FROM teachers
       WHERE id = $1`, [id], (err, results) => {
-        if(err) {
-          throw `Data base ${err}`
-        }
+      if(err) {
+        throw `Database ${err}`
       }
-    )
+
+      callback(results.rows[0])
+    })
   }
 }

@@ -23,7 +23,8 @@ module.exports = {
 
     return {
       iso: `${year}-${month}-${day}`,
-      birthDay: `${day}/${month}`
+      birthDay: `${day}/${month}`,
+      format: `${day}/${month}/${year}`
     }
   },
   classType: typeClass => {
@@ -36,7 +37,7 @@ module.exports = {
     if(educationLevel == 'master') return 'Mestrado'
     if(educationLevel == 'doctorate') return 'Doutorado'
     
-    return education
+    return educationLevel
   },
   grade: educationLevel => {
     if(educationLevel == '5EF') return '5º ano - Fundamental I'

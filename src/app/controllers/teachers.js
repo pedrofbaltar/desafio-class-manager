@@ -1,4 +1,4 @@
-const { age, date, grade } = require('../../lib/utils')
+const { date, graduation, classType, age } = require('../../lib/utils')
 const Teacher = require('../models/Teacher')
 
 module.exports = {
@@ -24,7 +24,19 @@ module.exports = {
     })
   },
   show(req, res) {
-    return
+    Teacher.find(req.params.id, teacher => {
+      if(!teacher) {
+        return res.send('Teacher not found!')
+      }
+
+      teacher.graduation = graduation(teacher.education_level)
+      teacher.age = age(teacher.birth_date)
+      teacher.classType = classType(teacher.class_type)
+      teacher.services = teacher.subjects_taught.split(',')
+      teacher.created_at = date(teacher.created_at).format
+
+      return res.render('teachers/show', { teacher })
+    })
   },
   edit(req, res) {
     return
