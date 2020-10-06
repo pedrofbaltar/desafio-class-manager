@@ -39,7 +39,17 @@ module.exports = {
     })
   },
   edit(req, res) {
-    return
+    Teacher.find(req.params.id, teacher => {
+      if(!teacher) {
+        return res.send('Teacher not found!')
+      }
+
+      teacher.birth = date(teacher.birth_date).iso
+      teacher.classType = teacher.class_type
+      teacher.services = teacher.subjects_taught
+
+      return res.render('teachers/edit', { teacher })
+    })
   },
   update(req, res) {
     const keys = Object.keys(req.body)

@@ -73,7 +73,7 @@
         type="radio" 
         name="classes" 
         value="distance"
-        {% if teacher.classes == "distance" %}
+        {% if teacher.classType == "distance" %}
           checked
         {% endif %}
       >Distância
@@ -83,7 +83,7 @@
         type="radio" 
         name="classes" 
         value="present"
-        {% if teacher.classes == "present" %}
+        {% if teacher.classType == "present" %}
           checked
         {% endif %}
       >Presencial

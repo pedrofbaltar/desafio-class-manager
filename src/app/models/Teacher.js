@@ -57,5 +57,34 @@ module.exports = {
 
       callback(results.rows[0])
     })
+  },
+  update(data, callback) {
+    const query = `
+      UPDATE teachers SET
+        name=($1),
+        avatar_url=($2),
+        birth_date=($3),
+        education_level=($4),
+        class_type=($5),
+        subjects_taught=($6),
+      WHERE id = $7
+    `
+
+    const values = [
+      data.name,
+      data.avatar_url,
+      date(data.birth).iso,
+      graduation(data.education_level),
+      data.classes,
+      data.services,
+    ]
+
+    db.query(query, values, (err, results) => {
+      if(err) {
+        throw `Database ${err}`
+      }
+
+      callback()
+    })
   }
 }
