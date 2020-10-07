@@ -44,6 +44,7 @@ module.exports = {
         return res.send('Teacher not found!')
       }
 
+      teacher.graduation = teacher.education_level
       teacher.birth = date(teacher.birth_date).iso
       teacher.classType = teacher.class_type
       teacher.services = teacher.subjects_taught

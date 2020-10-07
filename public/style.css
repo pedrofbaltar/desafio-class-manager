@@ -67,7 +67,7 @@ header {
 /* CARD */
 
 .card {
-  width: 800px;
+  max-width: 1000px;
   min-height: 400px;
   background-color: var(--secondary-color);
   margin: 45px auto;

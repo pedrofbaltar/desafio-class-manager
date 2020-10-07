@@ -1,11 +1,11 @@
-const { date, graduation } = require('../../lib/utils')
+const { date, grade } = require('../../lib/utils')
 const db = require('../../../config/db')
 
 module.exports = {
   all(callback) {
     db.query(`
     SELECT *
-    FROM teachers
+    FROM students
     ORDER BY name ASC`, (err, results) => {
       if(err) {
         throw `Database ${err}`
@@ -16,13 +16,13 @@ module.exports = {
   },
   create(data, callback) {
     const query = `
-      INSERT INTO teachers(
+      INSERT INTO students(
         name,
         avatar_url,
-        birth_date,
+        email,
         education_level,
-        class_type,
-        subjects_taught,
+        hours,
+        birth_date,
         created_at
       ) VALUES ($1, $2, $3, $4, $5, $6, $7)
       RETURNING id
@@ -31,10 +31,10 @@ module.exports = {
     const values = [
       data.name,
       data.avatar_url,
+      data.email,
+      grade(data.education_level),
+      data.hours,
       date(data.birth).iso,
-      data.education_level,
-      data.classes,
-      data.services,
       date(Date.now()).iso
     ]
 
@@ -49,7 +49,7 @@ module.exports = {
   find(id, callback) {
     db.query(`
       SELECT *
-      FROM teachers
+      FROM students
       WHERE id = $1`, [id], (err, results) => {
       if(err) {
         throw `Database ${err}`
@@ -60,23 +60,23 @@ module.exports = {
   },
   update(data, callback) {
     const query = `
-      UPDATE teachers SET
-        name=($1),
-        avatar_url=($2),
-        birth_date=($3),
+      UPDATE students SET
+        avatar_url=($1),
+        name=($2),
+        email=($3),
         education_level=($4),
-        class_type=($5),
-        subjects_taught=($6)
+        hours=($5),
+        birth_date=($6)
       WHERE id = $7
     `
 
     const values = [
-      data.name,
       data.avatar_url,
+      data.name,
+      data.email,
+      grade(data.education_level),
+      data.hours,
       date(data.birth).iso,
-      data.education_level,
-      data.classes,
-      data.services,
       data.id
     ]
 
@@ -90,7 +90,7 @@ module.exports = {
   },
   delete(id, callback) {
     db.query(`
-      DELETE FROM teachers
+      DELETE FROM students
       WHERE id = $1`, [id], (err, results) => {
       if(err) {
         throw `Database ${err}`
