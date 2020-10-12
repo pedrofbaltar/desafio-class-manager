@@ -34,5 +34,11 @@
       </tbody>
     </table>
     <a class="new-button" href="/teachers/create">Novo</a>
+
+    <div class="pagination"
+      data-page={{pagination.page}}
+      data-total={{pagination.total}}
+      data-filter={{filter}}
+    ></div>
   </div>
 {% endblock %}

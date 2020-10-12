@@ -246,7 +246,7 @@ tr:last-child td {
 }
 
 td a,
-.table-container a {
+.new-button {
   background: var(--primary-color);
   border-radius: 8px;
   color: #fff;
@@ -257,7 +257,7 @@ td a,
 }
 
 td a:hover,
-.table-container a:hover {
+.new-button:hover {
   background: var(--primary-hover);
 }
 
@@ -291,4 +291,25 @@ td a:hover,
 .table-container .header form button {
   margin: 0;
   height: 40px;
+}
+
+/* paginação */
+
+.table-container .pagination {
+  margin-top: 32px;
+  align-self: end;
+  justify-self: center;
+  text-align: center;
+}
+
+.pagination a,
+.pagination span {
+  color: var(--primary-color);
+  background: none;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.pagination a:hover {
+  border-bottom: 1px solid var(--primary-color);
 }
