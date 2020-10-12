@@ -38,7 +38,14 @@
       <div class="item">
         <div>Idade</div>
         <div>
-            {{ student.age }} anos
+          {{ student.age }} anos
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Aluno de</div>
+        <div>
+          {{ student.teacher_name }}
         </div>
       </div>
       <a href="/students/{{student.id}}/edit" class="button">Editar</a>
