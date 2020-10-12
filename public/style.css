@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   border: none;
+  outline: none;
 }
 
 body {
@@ -266,4 +267,28 @@ td a:hover,
   box-sizing: border-box;
   text-align: center;
   margin-top: 32px;
+}
+
+.table-container .header form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 12px;
+  align-items: center;
+}
+
+.table-container .header form input {
+  border: 2px solid #eee;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.table-container .header form input:focus {
+  border: 2px solid var(--primary-color);
+}
+
+.table-container .header form button {
+  margin: 0;
+  height: 40px;
 }
